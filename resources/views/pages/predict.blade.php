@@ -113,7 +113,7 @@
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <button type="button" class="btn btn-default btn-number"
-                                                data-type="minus">Product_rating :
+                                                data-type="minus">Rating :
                                             </button>
                                         </span>
                                         <input type="number" class="form-control input-number proRate" value="1.0"
@@ -131,8 +131,7 @@
                                 <!-- Actual price -->
 
                                 <div class="col-md-12 mt-3">
-                                    <input type="text" class="form-control proPrice"
-                                        placeholder="Actual Product Price">
+                                    <input type="text" class="form-control proPrice" placeholder="Product price">
                                 </div>
 
 
