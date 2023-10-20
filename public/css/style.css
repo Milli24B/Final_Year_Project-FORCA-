@@ -1582,3 +1582,19 @@ body {
   .modal-title{
     color: #cc0606;
   }
+
+  .proceed-btn{
+    color: #020202;
+    border-radius: 4px;
+    padding: 7px 25px 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-block;
+    border: 2px solid #ffc451;
+  }
+  
+  .proceed-btn:hover {
+    background: #ffc451;
+    color: #050505;
+  }

@@ -138,12 +138,12 @@
 
                                 <!-- Predict Button trigger modal -->
                                 <div class="col-md-12 mt-4">
-                                    <button type="button" class="get-prediction-btn" data-bs-toggle="modal"
+                                    <button type="button" class="proceed-btn" data-bs-toggle="modal"
                                         data-bs-target="#myModal">
-                                        PREDICT
+                                        Proceed
                                     </button>
 
-                                    {{-- <div class="modal fade" id="myModal" tabindex="-1"
+                                    <div class="modal fade" id="myModal" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true"
                                         data-bs-backdrop="false">
                                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -157,17 +157,18 @@
                                                 <div class="modal-body">
                                                     <!-- Modal content goes here -->
                                                     <p>The output is only a prediction with a <b>90.2%</b> accuracy
-                                                        !<br>Click <b>CONTINUE</b> to proceed.</p>
+                                                        !<br>Click <b>PREDICT</b> to countinue.</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="dismiss-btn"
                                                         data-bs-dismiss="modal">CLOSE</button>
-                                                    <button type="button" class="get-prediction-btn"
-                                                        data-bs-dismiss="modal">CONTINUE</button>
+                                                        <button type="button" class="get-prediction-btn" data-bs-toggle="modal"
+                                                        data-bs-target="#myModal">
+                                                        PREDICT
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
 
                                 </div>
                             </div>
@@ -297,7 +298,7 @@
 
             // Perform the prediction and handle it as needed
 
-            // Replace the following code with your actual prediction logic
+            
             fetch('http://127.0.0.1:8001/predict', {
                 method: 'POST',
                 headers: {
