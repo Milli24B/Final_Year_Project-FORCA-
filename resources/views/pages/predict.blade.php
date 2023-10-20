@@ -143,7 +143,7 @@
                                         PREDICT
                                     </button>
 
-                                    <div class="modal fade" id="myModal" tabindex="-1"
+                                    {{-- <div class="modal fade" id="myModal" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true"
                                         data-bs-backdrop="false">
                                         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -167,7 +167,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
 
                                 </div>
                             </div>
@@ -179,6 +179,7 @@
 
                         <div class="card-body">
                             <b>PREDICTION OUTPUT</b>
+                            <div id="prediction-output"></div>
                         </div>
                     </div>
                 </div>
@@ -288,6 +289,43 @@
                     }
                 });
             });
+
+            $(".get-prediction-btn").click(function() {
+            var rating = $('.proRate').val();
+            var ratingCount = $('.proCount').val();
+            var price = $('.proPrice').val();
+
+            // Perform the prediction and handle it as needed
+
+            // Replace the following code with your actual prediction logic
+            fetch('http://127.0.0.1:8001/predict', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    rating: rating,
+                    rating_count: ratingCount,
+                    current_price: price
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                var prediction = data.prediction;
+                console.log("Prediction:", prediction);
+
+                // Update the prediction output in your HTML
+                // Replace 'prediction-output' with the ID or class of your output element
+                $("#prediction-output").text("Prediction: " + prediction);
+
+                // Additional code to update other elements or perform actions
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    
         </script>
 
 
