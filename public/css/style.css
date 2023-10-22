@@ -1614,3 +1614,11 @@ body {
     background: #ffc451;
     color: #050505;
   }
+
+  .text-date{
+    color: rgb(80, 78, 78);
+    font-style: italic;
+    font-size:medium;
+    text-align: right;
+  }
+  

@@ -114,19 +114,19 @@
                                     <div class="input-group">
                                         <span class="input-group-btn">
                                             <button type="button" class="btn btn-default btn-number"
-                                                data-type="minus">Rating :
+                                                data-type="minus">-
                                             </button>
                                         </span>
                                         <input type="number" class="form-control input-number proRate" value="1.0"
                                             min="1.0" max="5.0" step="0.1">
-                                        {{-- <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" data-type="plus">+</button></span> --}}
+                                        <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" data-type="plus">+</button></span>
                                     </div>
                                 </div>
 
                                 <!-- Rating counting -->
 
                                 <div class="col-md-12 mt-3">
-                                    <input type="text" class="form-control proCount" placeholder="Rating count">
+                                    <input type="text" class="form-control proCount" placeholder="Rating count" readonly>
                                 </div>
 
                                 <!-- Actual price -->
@@ -186,8 +186,30 @@
                     <div class="card h-100">
 
                         <div class="card-body">
-                            <b>PREDICTION OUTPUT</b>
+                            <div class="d-flex justify-content-between">
+                            <p class="text-right"> <b>PREDICTION OUTPUT</b></p>
+                            <div class="text-date" id="date-time"></div>
+                            </div>
+                            
+                            <div class="col-md-12 mt-3">
+                                Product rating :
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                Rating count :
+                            </div>
+                            <div class="col-md-12 mt-3">
+                                Current price (Rs) :
+                            </div>
+                            <div class="col-md-12 mt-4"><span style="color: gray; font-style: italic; font-size:small">
+                                    <p>(The predicted output value be a <span style="color: rgb(4, 207, 21);">positive</span>
+                                        number implies a possible price increase or if the value is a <span
+                                            style="color: rgb(255, 3, 3);">negative</span> output that implies a possible price
+                                        reduction.)</p>
+                                </span>
+                            </div>
                             <div id="prediction-output"></div>
+                            <!-- Download icon -->
+                       
                         </div>
                     </div>
                 </div>
@@ -334,6 +356,22 @@
             });
         });
     
+        </script>
+        <script>
+            function updateDateTime() {
+                const dateTimeElement = document.getElementById("date-time");
+                const currentDate = new Date();
+                const formattedDate = currentDate.toLocaleDateString();
+                const formattedTime = currentDate.toLocaleTimeString();
+                const dateTimeString = `${formattedDate} ${formattedTime}`;
+                dateTimeElement.textContent = dateTimeString;
+            }
+    
+            // Call the function to update the date and time initially
+            updateDateTime();
+    
+            // Update the date and time every second
+            setInterval(updateDateTime, 1000);
         </script>
 
 
