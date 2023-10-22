@@ -68,6 +68,7 @@
 
 
     <!--  ======= Prediction section =======  -->
+    <form id="predictform">
     <section id="prediction" class="prediction">
         <div class="container" data-aos="fade-up">
 
@@ -85,7 +86,7 @@
                                 <div class="col-md-12">
                                     <div class="col-md-12 mt-3">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-secondary dropdown-toggle"
+                                            <button type="button" class="btn btn-secondary dropdown-toggle "
                                                 data-bs-toggle="dropdown" aria-expanded="false">
                                                 Select Category
                                             </button>
@@ -143,6 +144,12 @@
                                         Proceed
                                     </button>
 
+                                    <button type="button" class="reset-btn"  >
+                                    {{-- data-bs-toggle="modal"
+                                        data-bs-target="#myModal"> --}}
+                                        Reset
+                                    </button>
+                                </form>
                                     <div class="modal fade" id="myModal" tabindex="-1"
                                         aria-labelledby="exampleModalLabel" aria-hidden="true"
                                         data-bs-backdrop="false">

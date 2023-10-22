@@ -1562,6 +1562,22 @@ body {
     background: #ffc451;
     color: #050505;
   }
+
+  .reset-btn{
+    color: #020202;
+    border-radius: 4px;
+    padding: 7px 25px 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    /* display: inline-block; */
+    float: right;
+    border: 2px solid #a5a5a5;
+  }
+  .reset-btn:hover{
+    background: #a1a1a1;
+    color: #050505;
+  }
   
   .dismiss-btn{
     color: #020202;
