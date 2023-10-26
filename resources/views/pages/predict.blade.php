@@ -80,13 +80,13 @@
             <div class="row mt-5" data-aos="fade-up" data-aos-delay="150">
                 <div class="col-md-5">
                     <div class="card h-100">
-                        <div class="card-body" style="height: 415px;">
+                        <div class="card-body" style="height: 500px;">
                             <p class="text-right"><b>Try out a product prediction here...</b></p>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="col-md-12 mt-3">
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-secondary dropdown-toggle "
+                                        {{-- <div class="btn-group"> --}}
+                                            <button type="button" class="btn btn-secondary dropdown-toggle w-100"
                                                 data-bs-toggle="dropdown" aria-expanded="false">
                                                 Select Category
                                             </button>
@@ -99,11 +99,11 @@
                                                     </li>
                                                 @endforeach
                                             </ul>
-                                        </div>
+                                        {{-- </div> --}}
                                     </div>
 
                                     <div class="col-md-12 mt-3">
-                                        <select id="productDropdown" class="btn btn-secondary dropdown-toggle"
+                                        <select id="productDropdown" class="btn btn-secondary dropdown-toggle w-100"
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             <option value="">Select Product</option>
                                         </select>
@@ -111,28 +111,31 @@
                                 </div>
                                 <!-- Rating_counter -->
                                 <div class="col-md-12 mt-3">
-                                    <div class="input-group">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="btn btn-default btn-number"
+                                    {{-- <div class="input-group"> --}}
+                                        {{-- <span class="input-group-btn"> --}}
+                                            {{-- <button type="button" class="btn btn-default btn-number"
                                                 data-type="minus">-
-                                            </button>
-                                        </span>
-                                        <input type="number" class="form-control input-number proRate" value="1.0"
+                                            </button> --}}
+                                        {{-- </span> --}}
+                                        <label for="rating" class="form-label">Rating</label>
+                                        <input type="number" class="form-control input-number proRate" id="rating" value="1.0"
                                             min="1.0" max="5.0" step="0.1">
-                                        <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" data-type="plus">+</button></span>
-                                    </div>
+                                        {{-- <span class="input-group-btn"><button type="button" class="btn btn-default btn-number" data-type="plus">+</button></span> --}}
+                                    {{-- </div> --}}
                                 </div>
 
                                 <!-- Rating counting -->
 
                                 <div class="col-md-12 mt-3">
-                                    <input type="text" class="form-control proCount" placeholder="Rating count" readonly>
+                                    <label for="ratingcount" class="form-label">Rating Count</label>
+                                    <input type="text" class="form-control proCount" id="ratingcount" placeholder="Rating count" readonly>
                                 </div>
 
                                 <!-- Actual price -->
 
                                 <div class="col-md-12 mt-3">
-                                    <input type="text" class="form-control proPrice" placeholder="Product price">
+                                    <label for="productprice" class="form-label">Product price (Rs.)</label>
+                                    <input type="text" class="form-control proPrice" id="productprice" placeholder="Product price">
                                 </div>
 
 
@@ -215,7 +218,7 @@
                 </div>
             </div>
         </div>
-
+    </section>
         <!-- End Prediction section -->
 
         <!-- ======= Contact Section ======= -->
