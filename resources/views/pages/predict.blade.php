@@ -110,7 +110,7 @@
                                     </div>
                                 </div>
                                 <!-- Rating_counter -->
-                                <div class="col-md-12 mt-3">
+                                <div class="col-md-12 mt-5">
                                     {{-- <div class="input-group"> --}}
                                         {{-- <span class="input-group-btn"> --}}
                                             {{-- <button type="button" class="btn btn-default btn-number"
@@ -137,52 +137,56 @@
                                     <label for="productprice" class="form-label">Product price (Rs.)</label>
                                     <input type="text" class="form-control proPrice" id="productprice" placeholder="Product price">
                                 </div>
+                                <div class="mt-2" id="errorMessages" style="color:red" ></div>
 
 
 
-                                <!-- Predict Button trigger modal -->
-                                <div class="col-md-12 mt-4">
-                                    <button type="button" class="proceed-btn" data-bs-toggle="modal"
-                                        data-bs-target="#myModal">
-                                        Proceed
-                                    </button>
+                               
+                            </div>
+                        </div>
+                        <div class="card-footer border-0 ">
+                             <!-- Predict Button trigger modal -->
+                             <div class="col-md-12">
+                                <button type="button" class="proceed-btn" onclick="validateForm()" data-bs-toggle="modal"
+                                    data-bs-target="#myModal">
+                                    Proceed
+                                </button>
 
-                                    <button type="button" class="reset-btn"  >
-                                    {{-- data-bs-toggle="modal"
-                                        data-bs-target="#myModal"> --}}
-                                        Reset
-                                    </button>
-                                </form>
-                                    <div class="modal fade" id="myModal" tabindex="-1"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true"
-                                        data-bs-backdrop="false">
-                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel"> <b>DISCLAIMER </b>
-                                                    </h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <!-- Modal content goes here -->
-                                                    <p>The output is only a prediction with a <b>90.2%</b> accuracy
-                                                        !<br>Click <b>PREDICT</b> to countinue.</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="dismiss-btn"
-                                                        data-bs-dismiss="modal">CLOSE</button>
-                                                        <button type="button" class="get-prediction-btn" data-bs-toggle="modal"
-                                                        data-bs-target="#myModal">
-                                                        PREDICT
-                                                </div>
+                                <button type="button" class="reset-btn"   >
+                                {{-- data-bs-toggle="modal"
+                                    data-bs-target="#myModal"> --}}
+                                    Reset
+                                </button>
+                            </form>
+                                <div class="modal fade" id="myModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true"
+                                    data-bs-backdrop="false">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel"> <b>DISCLAIMER </b>
+                                                </h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <!-- Modal content goes here -->
+                                                <p>The output is only a prediction with a <b>90.2%</b> accuracy
+                                                    !<br>Click <b>PREDICT</b> to countinue.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="dismiss-btn"
+                                                    data-bs-dismiss="modal">CLOSE</button>
+                                                    <button type="button" class="get-prediction-btn" data-bs-toggle="modal"
+                                                    data-bs-target="#myModal">
+                                                    PREDICT
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
+
                             </div>
-                        </div>
+                          </div>
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -375,6 +379,30 @@
     
             // Update the date and time every second
             setInterval(updateDateTime, 1000);
+        </script>
+        <script>
+            function validateForm() {
+  const input1 = document.getElementById('rating');
+  const input2 = document.getElementById('ratingcount');
+  const input3 = document.getElementById('productprice');
+  const errorMessages = document.getElementById('errorMessages');
+
+  // Clear any previous error messages
+  errorMessages.innerHTML = '';
+
+  // Validate the input fields
+  if (input1.value.trim() === ''|| input2.value.trim() === '' || input3.value.trim() === '') {
+    errorMessages.innerHTML += 'Fill all the fields';
+  }
+ 
+
+  // Check if there are any error messages
+//   if (errorMessages.innerHTML === '') {
+//     // If there are no error messages, you can proceed with your action here.
+//     alert('Form validated successfully!');
+//   }
+}
+
         </script>
 
 
