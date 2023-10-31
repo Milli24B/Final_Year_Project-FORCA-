@@ -137,7 +137,7 @@
                                     <label for="productprice" class="form-label">Product price (Rs.)</label>
                                     <input type="text" class="form-control proPrice" id="productprice" placeholder="Product price">
                                 </div>
-                                <div class="mt-2" id="errorMessages" style="color:red" ></div>
+                                <div class="mt-2" id="errorMessages" style="color:red; font-style: italic;" ></div>
 
 
 
@@ -171,7 +171,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 <!-- Modal content goes here -->
-                                                <p>The output is only a prediction with a <b>90.2%</b> accuracy
+                                                <p style="font-style: italic; color: gray;">The output is only a prediction with a <b>90.2%</b> accuracy
                                                     !<br>Click <b>PREDICT</b> to countinue.</p>
                                             </div>
                                             <div class="modal-footer">
@@ -392,7 +392,7 @@
 
   // Validate the input fields
   if (input1.value.trim() === ''|| input2.value.trim() === '' || input3.value.trim() === '') {
-    errorMessages.innerHTML += 'Fill all the fields';
+    errorMessages.innerHTML += 'Fill in all the fields to proceed';
   }
  
 
