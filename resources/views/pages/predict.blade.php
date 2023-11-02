@@ -310,6 +310,10 @@
             });
         });
 
+        $(document).on('click','.reset-btn',function(){
+            console.log('reset')
+            location.reload(); });
+
         $(document).on('click', '#productDropdown', function() {
             var id = $('#productDropdown').val();
             $.ajax({
@@ -373,6 +377,7 @@
         });
     </script>
     <script>
+
         function updateDateTime() {
             const dateTimeElement = document.getElementById("date-time");
             const currentDate = new Date();
